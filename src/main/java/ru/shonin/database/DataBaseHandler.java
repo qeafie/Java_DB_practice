@@ -11,7 +11,7 @@ import java.util.Properties;
 
 public class DataBaseHandler {
     private static DataBaseHandler instance;
-    private Connection dbConnection;
+    private static Connection dbConnection;
 
     public static DataBaseHandler getDataBaseHandler(){
         if (instance==null)
@@ -22,7 +22,7 @@ public class DataBaseHandler {
     private DataBaseHandler(){
     }
 
-    public Connection getDbConnection() throws IOException {
+    public static Connection getDbConnection() throws IOException {
 
 
         Properties properties = new Properties();
