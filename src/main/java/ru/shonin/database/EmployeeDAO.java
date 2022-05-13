@@ -55,6 +55,6 @@ public class EmployeeDAO {
             preparedStatement = connection.prepareStatement("UPDATE \"employee\" SET name = ?, department = ?");
         }
         preparedStatement.setString(1,employee.getName());
-        preparedStatement.setString(2, Integer.toString(employee.getDepartment()));
+        preparedStatement.setString(2, Integer.toString(employee.getDepartmentId()));
     }
 }

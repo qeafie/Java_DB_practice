@@ -1,18 +1,28 @@
 package ru.shonin.database;
 import org.springframework.data.annotation.Id;
+
 public class Employee {
     @Id
     private  Integer id;
     private String name;
-    private Integer department;
+    private Integer departmentId;
+
+    private String department;
 
     public Employee() {
     }
 
-    public Employee(Integer id, String name, Integer department) {
+    public Employee(Integer id, String name, Integer departmentId, String department) {
         this.id = id;
         this.name = name;
+        this.departmentId = departmentId;
         this.department = department;
+    }
+
+    public Employee(Integer id, String name, Integer departmentId) {
+        this.id = id;
+        this.name = name;
+        this.departmentId = departmentId;
     }
 
     public Integer getId() {
@@ -31,12 +41,12 @@ public class Employee {
         this.name = name;
     }
 
-    public Integer getDepartment() {
-        return department;
+    public Integer getDepartmentId() {
+        return departmentId;
     }
 
-    public void setDepartment(Integer department) {
-        this.department = department;
+    public void setDepartmentId(Integer departmentId) {
+        this.departmentId = departmentId;
     }
 
     @Override
@@ -44,7 +54,8 @@ public class Employee {
         return "Employee{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", department=" + department +
+                ", departmentId=" + departmentId +
+                ", department='" + department + '\'' +
                 '}';
     }
 }

@@ -4,6 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import ru.shonin.consoleapp.ConsoleApp;
 import ru.shonin.database.DataBaseHandler;
+import ru.shonin.database.DepartmentRepository;
 import ru.shonin.database.EmployeeConfig;
 import ru.shonin.database.EmployeeRepository;
 
@@ -27,7 +28,15 @@ public class StartApp {
        //employeeRepository.findAll().forEach(System.out::println);
 
 
-        context.getBean(ConsoleApp.class).run();
+        ConsoleApp consoleApp =  context.getBean(ConsoleApp.class);
+        //context.getBean(ConsoleApp.class).run()
        //Сделать малое консольное приложение позволяющее добавлять сотрудников
+
+        //метод для репозитория находящий всех людей в конкретном отделе
+
+        EmployeeRepository employeeRepository=context.getBean(EmployeeRepository.class);
+      //  System.out.println(employeeRepository.findAllByDepartment(2));
+
+        System.out.println(employeeRepository.findEmployeesWithDepartment());
     }
 }

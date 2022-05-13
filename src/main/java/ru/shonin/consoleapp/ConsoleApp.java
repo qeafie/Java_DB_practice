@@ -1,7 +1,6 @@
 package ru.shonin.consoleapp;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import ru.shonin.database.Employee;
 import ru.shonin.database.EmployeeRepository;
@@ -68,9 +67,10 @@ public class ConsoleApp {
         int idDepartment = scanner.nextInt();
         Employee employee = new Employee();
         employee.setName(name);
-        employee.setDepartment(idDepartment);
+        employee.setDepartmentId(idDepartment);
         employeeRepository.save(employee);
 
 
     }
+
 }

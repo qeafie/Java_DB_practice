@@ -1,7 +1,7 @@
 package ru.shonin.database;
 
 public class Department {
-    private int id;
+    private Integer id;
     private String name;
 
     @Override
